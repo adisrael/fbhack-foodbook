@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
+import Container from 'react-bootstrap/Container';
+import SearchTop from './SearchTop';
+import SearchContent from './SearchContent.jsx';
 
 
 class Search extends Component {
   render() {
     return (
         <div>
-           <h1>Search</h1>
+           <Container>
+           <SearchTop/>
+           <SearchContent/>
+           </Container>
         </div>
     );
   }
