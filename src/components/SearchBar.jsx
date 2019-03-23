@@ -1,24 +1,43 @@
 import React, { Component } from 'react'
+import Form from 'react-bootstrap/Form'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
 
-const input = {
-    border: 'solid gray',
-    borderRadius: '5px'
-}
-
-const inline = {
-    display: "inline"
-}
 export default class SearchBar extends Component {
-  render() {
-    return (
-        <div style={{padding: '20px'}}>
-            <div style={inline}>
-            <form action="" style={inline}>
-                <input type="text" style={input}/>
-                <input type="button" value="Filter"/>
-            </form>
+    constructor(props) {
+        super(props);
+        this.state = {
+            input: '',
+            filterVisible: false,
+        }
+        this.changeHandler = this.changeHandler.bind(this)
+        this.visibleHandler = this.visibleHandler.bind(this)
+
+    }
+
+    changeHandler(event){
+        this.setState({input: event.target.value})
+    }
+
+    visibleHandler(event){
+        this.setState((prevState, props) => ({filterVisible: !prevState.filterVisible}))
+    }
+
+    render() {
+        return (
+            <div>
+                <Form>
+                    <Form.Row>
+                        <Col xs={9}><Form.Control type="text" onChange={this.changeHandler}/></Col>
+                        <Col xs={1}><Button onClick={this.visibleHandler}>Filter</Button></Col>
+                    </Form.Row>
+
+                    <Form.Row style={{marginTop: "10px"}}>
+        {this.state.filterVisible && <Col xs={9}><Form.Control type="text" onChange={this.changeHandler}/></Col> }
+                    </Form.Row>
+                </Form>
             </div>
-        </div>
-    )
-  }
+        )
+    }
 }
