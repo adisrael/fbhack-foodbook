@@ -8,7 +8,7 @@ import Search from './components/Search.jsx'
 class Logic extends Component {
 
   render() {
-    let state = 1
+    let state = 0
     let element
     if (state == 0){
         element = <Home/>
