@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Home from './components/Home.jsx'
 import Explore from './components/Explore.jsx'
+import Profile from './components/Profile.jsx'
+import Search from './components/Search.jsx'
+
 
 class Logic extends Component {
 
@@ -17,7 +20,7 @@ class Logic extends Component {
         element = <Search/>
     }
     return (
-        <div>   
+        <div>
         {element}
         </div>
     );
