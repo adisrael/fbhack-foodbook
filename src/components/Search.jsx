@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import SearchTop from './SearchTop'
 
 
 class Search extends Component {
   render() {
     return (
         <div>
-           <h1>Search</h1>
+           <SearchTop/>
         </div>
     );
   }
