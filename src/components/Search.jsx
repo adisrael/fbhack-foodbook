@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import SearchTop from './SearchTop'
-import Container from 'react-bootstrap/Container'
+import Container from 'react-bootstrap/Container';
+import SearchTop from './SearchTop';
+import SearchContent from './SearchContent.jsx';
 
 
 class Search extends Component {
@@ -9,6 +10,7 @@ class Search extends Component {
         <div>
            <Container>
            <SearchTop/>
+           <SearchContent/>
            </Container>
         </div>
     );
