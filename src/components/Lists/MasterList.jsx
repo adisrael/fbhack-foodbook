@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import photo from '../../Images/indianList.jpg';
 
 const MasterListStyle = {
     textAlign: 'Center'
@@ -32,29 +31,36 @@ const imageStyles = {
 }
 
 class MasterList extends Component {
-    render(){
-        return (
-            <div className='MasterList' style={MasterListStyle}>
-            <h2>{this.props.title}</h2>
-            <p>{this.props.description}</p>
-                <List></List>
-            </div>
-        )
-    }
-}
+    constructor(props) {
+        super(props)
+          this.state = { listas: [] }
+      }
 
-class List extends Component {
+      componentWillMount() {
+
+        fetch (this.props.sheet)
+        .then((response) => {
+            return response.json()
+          })
+          .then((listas) => {
+            this.setState({ listas })
+          })
+      }
+      
     render(){
-        return (
-            <div className='List' style={body}>
-                <section style ={cardStyle}>
-                    <ListCard title="My grandmother's Indian recipe"></ListCard>
-                    <ListCard title="The best of Chilean food"></ListCard>
-                    <ListCard title="Japanese food and its mysteries"></ListCard>
-                    <ListCard title='Recipes of the ancient samuai'></ListCard>
-                    <ListCard title="The best recipes with rice"></ListCard>
-                    <ListCard title="Recipes for romantic dinners"></ListCard>
+        return ( 
+            <div className='MasterList' style={MasterListStyle}>
+            <h3>{this.props.title}</h3>
+            <p>{this.props.description}</p>
+            <div style={body}>
+                <section style = {cardStyle}>
+                {this.state.listas.map(elements =>{
+                    return (
+                    <ListCard id={elements.id} title={elements.Nombre} image={elements.Imagen}/>
+                    )
+                })}
                 </section>
+            </div>
             </div>
         )
     }
@@ -64,8 +70,8 @@ class ListCard extends Component {
     render(){
         return (
             <div className='ListCards'  style= {cardContent}>
-                <img src={photo} alt="Logo" style={imageStyles}/>
-                <h3>{this.props.title}</h3>
+                <img src={this.props.image} alt="Logo" style={imageStyles}/>
+                <h6>{this.props.title}</h6>
             </div>
         )
     }
