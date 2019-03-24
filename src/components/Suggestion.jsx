@@ -73,7 +73,7 @@ export default class Suggestion extends Component {
         {selected}
         </div>)
         return (
-        <div>
+        <div style={{marginBottom:'65px'}}>
             <Container>
             
             <h1 style={{textAlign:'center'}}>New Ideas</h1>
