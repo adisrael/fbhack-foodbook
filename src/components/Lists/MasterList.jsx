@@ -42,6 +42,7 @@ class MasterList extends Component {
     constructor(props) {
         super(props)
           this.state = { listas: [], loading: true }
+          this.redirect = {1:3,3:3,4:4}
       }
 
       componentWillMount() {
@@ -62,7 +63,9 @@ class MasterList extends Component {
         } else {
             content = this.state.listas.map(elements =>{
                 return (
-                <ListCard menuClickHandler={this.props.menuClickHandler} key={uid()} title={elements.Nombre} image={elements.Imagen} starts={elements.Stars}/>
+
+                <ListCard redirect={this.redirect[this.props.Id]} recipeHandler={this.props.recipeHandler} menuClickHandler={this.props.menuClickHandler} Ide={elements.Id} key={uid()} title={elements.Nombre} image={elements.Imagen} starts={elements.Stars}/>
+
                 )
             })
         }
@@ -81,14 +84,21 @@ class MasterList extends Component {
 }
 
 class ListCard extends Component {
-    constructor(props) {
-        super(props)
-      }
 
+    constructor(props){
+        super(props)
+        this.sendRecipes = this.sendRecipes.bind(this)
+    }
+
+
+    sendRecipes(){
+        this.props.recipeHandler(this.props.Ide)
+        this.props.menuClickHandler(this.props.redirect)
+    }
 
     render(){
         return (
-            <div className='ListCards'  style= {cardContent} onClick={()=>{this.props.menuClickHandler(3)}}>
+            <div className='ListCards'  style= {cardContent} onClick={this.sendRecipes}>
                 <img  src={this.props.image} alt="Logo" style={imageStyles}/>
                 <h6>{this.props.title}</h6>
             </div>
