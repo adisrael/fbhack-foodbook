@@ -11,11 +11,11 @@ export default class Menu extends Component {
   render() {
     const link_style = {color:'white',width:'33%',textAlign:'center'}
     const link_styleTwo = {color:'black',textAlign:'center'}
-    
+
     return (
       <div>
-        <Navbar style={{backgroundColor: 'black'}} fixed="bottom">
-    <Nav.Link href="#home" style={link_style} onClick={() => {this.props.clickHandler(0)}}>{<MDBIcon icon="utensils" />}</Nav.Link>
+        <Navbar style={{backgroundColor: 'black', height: '8%'}} fixed="bottom">
+          <Nav.Link href="#home" style={link_style} onClick={() => {this.props.clickHandler(0)}}>{<MDBIcon icon="utensils" />}</Nav.Link>
             <Nav.Link href="#profile" style={link_style} onClick={() => {this.props.clickHandler(1)}}><MDBIcon icon="user-alt" /></Nav.Link>
             <Nav.Link href="#search" style={link_style} onClick={() => {this.props.clickHandler(2)}}><MDBIcon icon="search"/></Nav.Link>
             <Nav.Link href="#cart" style={link_style} onClick={() => {this.props.clickHandler(7)}}><MDBIcon icon="shopping-cart" /></Nav.Link>
