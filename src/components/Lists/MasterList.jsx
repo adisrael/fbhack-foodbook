@@ -92,7 +92,9 @@ class ListCard extends Component {
 
 
     sendRecipes(){
-        this.props.recipeHandler(this.props.Ide)
+        if (this.props.redirect === 4){
+            this.props.recipeHandler(this.props.Ide)
+        }
         this.props.menuClickHandler(this.props.redirect)
     }
 
