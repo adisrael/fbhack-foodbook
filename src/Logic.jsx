@@ -10,11 +10,12 @@ import Cart from './components/Cart.jsx'
 import AddRecipe from './components/AddRecipe.jsx'
 import AddList from './components/AddList.jsx'
 import Results from './components/Results.jsx';
+import Welcome from './components/Welcome.jsx';
 
 class Logic extends Component {
     constructor(props){
         super(props)
-        this.state = {index: 3, ingredients: [], cart: [], recipe_id:null}
+        this.state = {index: 10, ingredients: [], cart: [], recipe_id:null}
         this.menuClickHandler = this.menuClickHandler.bind(this)
         this.ingredientsHandler = this.ingredientsHandler.bind(this)
         this.cartHandler = this.cartHandler.bind(this)
@@ -71,9 +72,13 @@ class Logic extends Component {
     else if (this.state.index === 7){
         element = <Cart cart={this.state.cart}/>
     }
+    else if (this.state.index === 10){
+        element = <Welcome menuClickHandler={this.menuClickHandler}/>
+    }
     return (
         <div>
-            <Menu clickHandler={this.menuClickHandler}/>
+            {this.state.index != 10?<Menu clickHandler={this.menuClickHandler}/>:null}
+            
             {element}
             <div style={{marginBottom:'65px'}}></div>
         </div>
