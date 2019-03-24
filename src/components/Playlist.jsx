@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import playlistData from '../data/playlists.js'
+import recipesData from '../data/recipes.js'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -87,7 +88,7 @@ export class RecipeList extends Component {
     // this.handleChange = this.handleChange.bind(this)
   }
   render() {
-    const recipes = this.props.recipeList.recipes.map(recipe => <ShortRecipe key={recipe.id} recipe={recipe} menuClickHandler={this.props.menuClickHandler}/>)
+    const recipes = this.props.recipeList.recipes.map(recipe => <ShortRecipe key={recipe} recipe={recipesData[recipe]} menuClickHandler={this.props.menuClickHandler}/>)
 
     return (
       <div>
