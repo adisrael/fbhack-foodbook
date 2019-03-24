@@ -92,15 +92,16 @@ function User(props) {
         </Col>
       </Row>
 
-      {/* <Row>
+      <Row>
         <p>{props.user.tags}</p>
       </Row>
-      <div className="playlists">
-        <MasterList title='Playlists'></MasterList>
+      <div className="playlist">
+      <MasterList title='Playlist' description='Des' sheet='https://sheetsu.com/apis/v1.0bu/5a04814a4863'/>
       </div>
       <div className="recipes">
-        <MasterList title='Recipes'></MasterList>
-      </div> */}
+      <MasterList title='Recipes' description='Des' sheet='https://sheetsu.com/apis/v1.0bu/b79697e12801'/>
+      </div>
+  
     </Container>
   )
 }
