@@ -5,7 +5,7 @@ import Search from './components/Search.jsx'
 import Playlist from './components/Playlist.jsx'
 import Recipe from './components/Recipe.jsx'
 import Menu from './components/Menu.jsx'
-//import console = require('console');
+import Suggestion from './components/Suggestion.jsx';
 
 
 class Logic extends Component {
@@ -29,13 +29,16 @@ class Logic extends Component {
         element = <Profile menuClickHandler={this.menuClickHandler}/>
     }
     else if (this.state.index === 2){
-        element = <Search/>
+        element = <Search suggestionHandler={this.menuClickHandler}/>
     }
     else if (this.state.index === 3){
         element = <Playlist/>
     }
-    else if (this.state.index == 4){
+    else if (this.state.index === 4){
         element = <Recipe/>
+    }
+    else if (this.state.index === 5){
+        element = <Suggestion/>
     }
     return (
         <div>
