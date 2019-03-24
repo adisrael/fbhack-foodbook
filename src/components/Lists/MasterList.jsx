@@ -61,7 +61,7 @@ class MasterList extends Component {
         } else {
             content = this.state.listas.map(elements =>{
                 return (
-                <ListCard menuClickHandler={this.props.menuClickHandler} key={uid()} title={elements.Nombre} image={elements.Imagen}/>
+                <ListCard recipeHandler={this.props.recipeHandler} menuClickHandler={this.props.menuClickHandler} Ide={elements.Id} key={uid()} title={elements.Nombre} image={elements.Imagen}/>
                 )
             })
         }
@@ -80,9 +80,20 @@ class MasterList extends Component {
 }
 
 class ListCard extends Component {
+    constructor(props){
+        super(props)
+        this.sendRecipes = this.sendRecipes.bind(this)
+    }
+
+
+    sendRecipes(){
+        this.props.recipeHandler(this.props.Ide)
+        this.props.menuClickHandler(4)
+    }
+
     render(){
         return (
-            <div className='ListCards'  style= {cardContent} onClick={()=>{this.props.menuClickHandler(3)}}>
+            <div className='ListCards'  style= {cardContent} onClick={this.sendRecipes}>
                 <img  src={this.props.image} alt="Logo" style={imageStyles}/>
                 <h6>{this.props.title}</h6>
             </div>

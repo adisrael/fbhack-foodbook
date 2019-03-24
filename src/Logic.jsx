@@ -12,9 +12,10 @@ import Results from './components/Results.jsx';
 class Logic extends Component {
     constructor(props){
         super(props)
-        this.state = {index: 3, ingredients: []}
+        this.state = {index: 3, ingredients: [], recipe:null}
         this.menuClickHandler = this.menuClickHandler.bind(this)
         this.ingredientsHandler = this.ingredientsHandler.bind(this)
+        this.recipeHandler = this.recipeHandler.bind(this)
     }
 
     menuClickHandler(index){
@@ -23,12 +24,16 @@ class Logic extends Component {
     ingredientsHandler(ingredients){
         this.setState({ingredients})
     }
+    recipeHandler(recipe){
+        console.log(recipe)
+        this.setState({recipe})
+    }
 
   render() {
 
     let element
     if (this.state.index === 0){
-        element = <Home menuClickHandler={this.menuClickHandler}/>
+        element = <Home menuClickHandler={this.menuClickHandler} recipeHandler={this.recipeHandler}/>
     }
     else if (this.state.index === 1){
         element = <Profile menuClickHandler={this.menuClickHandler}/>
@@ -40,7 +45,7 @@ class Logic extends Component {
         element = <Playlist menuClickHandler={this.menuClickHandler}/>
     }
     else if (this.state.index === 4){
-        element = <Recipe/>
+        element = <Recipe recipe={this.state.recipe} />
     }
     else if (this.state.index === 5){
         element = <Suggestion menuClickHandler={this.menuClickHandler} ingredientsHandler={this.ingredientsHandler}/>

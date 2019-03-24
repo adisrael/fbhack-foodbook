@@ -41,7 +41,7 @@ export default class Recipe extends Component {
   constructor(props) {
     super(props)
     this.state = {
-        recipe: recipeData[0],
+        recipe: recipeData[props.recipe],
         buttonState: 'light',
         buttonMessage: 'Add To PlayList'
     }
@@ -52,13 +52,14 @@ export default class Recipe extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div>
         <h1 style={titleStyle}>{this.state.recipe.name}</h1>
         <img src={this.state.recipe.image} style={imageStyle}/>
         <p style={pStyle}>{this.state.recipe.descriptions}</p>
         <hr/>
-        <ItemList parrafo={this.state.recipe.ingredients} title='Ingredients'/>
+        <ItemList parrafo={this.state.recipe.quantities} title='Ingredients'/>
         <hr/>
         <ItemList parrafo={this.state.recipe.preparation} title='Preparation'/>
         <hr/>
