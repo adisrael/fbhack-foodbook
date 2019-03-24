@@ -5,7 +5,8 @@ import Search from './components/Search.jsx'
 import Playlist from './components/Playlist.jsx'
 import Recipe from './components/Recipe.jsx'
 import Menu from './components/Menu.jsx'
-import Suggestion from './components/Suggestion.jsx'
+import Suggestion from './components/Suggestion.jsx';
+import Cart from './components/Cart.jsx'
 import AddRecipe from './components/AddRecipe.jsx'
 import AddList from './components/AddList.jsx'
 import Results from './components/Results.jsx';
@@ -13,9 +14,10 @@ import Results from './components/Results.jsx';
 class Logic extends Component {
     constructor(props){
         super(props)
-        this.state = {index: 3, ingredients: []}
+        this.state = {index: 3, ingredients: [], cart: []}
         this.menuClickHandler = this.menuClickHandler.bind(this)
         this.ingredientsHandler = this.ingredientsHandler.bind(this)
+        this.cartHandler = this.cartHandler.bind(this)
     }
 
     menuClickHandler(index){
@@ -23,6 +25,10 @@ class Logic extends Component {
     }
     ingredientsHandler(ingredients){
         this.setState({ingredients})
+    }
+
+    cartHandler(cart){
+      this.setState({cart})
     }
 
   render() {
@@ -41,7 +47,7 @@ class Logic extends Component {
         element = <Playlist menuClickHandler={this.menuClickHandler}/>
     }
     else if (this.state.index === 4){
-        element = <Recipe/>
+        element = <Recipe menuClickHandler={this.menuClickHandler} cartHandler={this.cartHandler}/>
     }
     else if (this.state.index === 5){
         element = <Suggestion menuClickHandler={this.menuClickHandler} ingredientsHandler={this.ingredientsHandler}/>
@@ -54,6 +60,9 @@ class Logic extends Component {
     }
     else if (this.state.index === 9){
         element = <AddList menuClickHandler={this.menuClickHandler}/>
+    }
+    else if (this.state.index === 7){
+        element = <Cart cart={this.state.cart}/>
     }
     return (
         <div>

@@ -95,12 +95,12 @@ function User(props) {
         <p>{props.user.tags}</p>
       </Row>
       <div className="playlist">
-      <MasterList menuClickHandler={props.menuClickHandler} title='Playlist' description='Des' sheet='https://sheetsu.com/apis/v1.0bu/a019e9cd9790'/>
+      <MasterList menuClickHandler={props.menuClickHandler} title='Playlists' description='My Playlists' sheet='https://sheetsu.com/apis/v1.0su/a2c91bdcd0ff'/>
       </div>
       <div className="recipes">
-      <MasterList  menuClickHandler={props.menuClickHandler} title='Recipes' description='Des' sheet='https://sheetsu.com/apis/v1.0bu/10d3cccdda38'/>
+      <MasterList  menuClickHandler={props.menuClickHandler} title='Recipes' description='My Recipes' sheet='https://sheetsu.com/apis/v1.0bu/10d3cccdda38'/>
       </div>
-  
+
     </Container>
   )
 }
