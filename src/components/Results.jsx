@@ -14,7 +14,7 @@ export default class Results extends Component {
 
     render() {
         let recipes = this.recipes.map(recipe =>{
-            return <ShortRecipe recipe={recipe} menuClickHandler={this.props.menuClickHandler} />
+            return <ShortRecipe recipeHandler={this.props.recipeHandler} recipe={recipe} menuClickHandler={this.props.menuClickHandler} />
         })
         return (
         <div>

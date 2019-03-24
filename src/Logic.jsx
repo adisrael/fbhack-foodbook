@@ -60,7 +60,7 @@ class Logic extends Component {
         element = <Suggestion menuClickHandler={this.menuClickHandler} ingredientsHandler={this.ingredientsHandler}/>
     }
     else if (this.state.index === 6){
-        element = <Results ingredients={this.state.ingredients} menuClickHandler={this.menuClickHandler}/>
+        element = <Results recipeHandler={this.recipeHandler} ingredients={this.state.ingredients} menuClickHandler={this.menuClickHandler}/>
     }
     else if (this.state.index === 8){
         element = <AddRecipe menuClickHandler={this.menuClickHandler}/>
