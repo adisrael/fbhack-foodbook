@@ -6,8 +6,8 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 export default class Playlist extends Component {
-  constructor() {
-        super()
+  constructor(props) {
+        super(props)
         this.state = {
             playlists: playlistData,
             follow: false,
@@ -74,23 +74,20 @@ export default class Playlist extends Component {
         </Row>
         <p style={list_text}>by {recipeList.owner}</p>
         <p style={list_text}>{recipeList.description}</p>
-        <Row>
-          {tags}
-        </Row>
         <br></br>
-        <RecipeList recipeList={recipeList}/>
+        <RecipeList recipeList={recipeList} menuClickHandler={this.props.menuClickHandler}/>
       </div>
     );
   }
 }
 
 class RecipeList extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     // this.handleChange = this.handleChange.bind(this)
   }
   render() {
-    const recipes = this.props.recipeList.recipes.map(recipe => <ShortRecipe key={recipe.id} recipe={recipe} />)
+    const recipes = this.props.recipeList.recipes.map(recipe => <ShortRecipe key={recipe.id} recipe={recipe} menuClickHandler={this.props.menuClickHandler}/>)
 
     return (
       <div>
@@ -103,24 +100,25 @@ class RecipeList extends Component {
 function ShortRecipe(props) {
   const image_style = {
     width: '100%',
-    height: 'auto',
+    height: '80px',
     borderRadius: '10%',
     position: 'relative',
     marginTop: '5%',
     verticalAlign: 'center',
-    maxHeight: '50px',
+    maxHeight: '100px',
     maxWidth: '100px'
   }
   const recipe_text = {
     marginLeft: 0,
     fontWeight: 'normal',
     color: '#888',
-    fontSize: '0.5em',
+    fontSize: '0.7em',
     marginTop: 0,
+    lineHeight: '1em'
   }
   const recipe_title = {
     fontWeight: 'bold',
-    fontSize: '0.8em',
+    fontSize: '1em',
     color: 'black',
     marginBottom: '5%',
     textAlign: 'left',
@@ -142,7 +140,7 @@ function ShortRecipe(props) {
     display: 'inline-block'
   }
   return (
-    <Container>
+    <Container onClick={()=>{props.menuClickHandler(4)}}>
       <Row>
         <Col xs={4}>
           <img src={props.recipe.image} alt="image" style={image_style}/>

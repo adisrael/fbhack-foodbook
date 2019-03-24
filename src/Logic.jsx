@@ -11,7 +11,7 @@ import Suggestion from './components/Suggestion.jsx';
 class Logic extends Component {
     constructor(props){
         super(props)
-        this.state = {index: 0}
+        this.state = {index: 3}
         this.menuClickHandler = this.menuClickHandler.bind(this)
     }
 
@@ -32,7 +32,7 @@ class Logic extends Component {
         element = <Search suggestionHandler={this.menuClickHandler}/>
     }
     else if (this.state.index === 3){
-        element = <Playlist/>
+        element = <Playlist menuClickHandler={this.menuClickHandler}/>
     }
     else if (this.state.index === 4){
         element = <Recipe/>
