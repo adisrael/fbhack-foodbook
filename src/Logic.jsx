@@ -30,7 +30,7 @@ class Logic extends Component {
         element = <Profile/>
     }
     else if (this.state.index === 2){
-        element = <Search/>
+        element = <Search suggestionHandler={this.menuClickHandler}/>
     }
     else if (this.state.index === 3){
         element = <Playlist/>

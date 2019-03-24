@@ -10,7 +10,7 @@ class Search extends Component {
         <div>
            <Container>
            <SearchTop/>
-           <SearchContent/>
+           <SearchContent suggestionHandler={this.props.suggestionHandler}/>
            </Container>
         </div>
     );
