@@ -20,7 +20,6 @@ class Logic extends Component {
 
   render() {
 
-
     let element
     if (this.state.index === 0){
         element = <Home/>
