@@ -90,10 +90,6 @@ function User(props) {
           </div>
         </Col>
       </Row>
-
-      <Row>
-        <p>{props.user.tags}</p>
-      </Row>
       <div className="playlist">
       <MasterList menuClickHandler={props.menuClickHandler} title='Playlists' description='My Playlists' sheet='https://sheetsu.com/apis/v1.0bu/efaa0f4293ab'/>
       </div>

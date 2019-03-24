@@ -14,7 +14,7 @@ import Results from './components/Results.jsx';
 class Logic extends Component {
     constructor(props){
         super(props)
-        this.state = {index: 3, ingredients: [], cart: [], recipe:null}
+        this.state = {index: 3, ingredients: [], cart: [], recipe_id:null}
         this.menuClickHandler = this.menuClickHandler.bind(this)
         this.ingredientsHandler = this.ingredientsHandler.bind(this)
         this.cartHandler = this.cartHandler.bind(this)
@@ -28,8 +28,8 @@ class Logic extends Component {
     ingredientsHandler(ingredients){
         this.setState({ingredients})
     }
-    recipeHandler(recipe){
-        this.setState({recipe})
+    recipeHandler(recipe_id){
+        this.setState({recipe_id})
     }
 
     cartHandler(cart){
@@ -49,11 +49,11 @@ class Logic extends Component {
         element = <Search suggestionHandler={this.menuClickHandler}/>
     }
     else if (this.state.index === 3){
-        element = <Playlist menuClickHandler={this.menuClickHandler}/>
+        element = <Playlist recipeHandler={this.recipeHandler} menuClickHandler={this.menuClickHandler}/>
     }
     else if (this.state.index === 4){
 
-        element = <Recipe recipe={this.state.recipe} menuClickHandler={this.menuClickHandler} cartHandler={this.cartHandler}/>
+        element = <Recipe recipe_id={this.state.recipe_id} menuClickHandler={this.menuClickHandler} cartHandler={this.cartHandler}/>
 
     }
     else if (this.state.index === 5){

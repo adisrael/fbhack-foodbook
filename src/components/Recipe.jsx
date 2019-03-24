@@ -42,7 +42,7 @@ export default class Recipe extends Component {
   constructor(props) {
     super(props)
     this.state = {
-        recipe: recipeData[props.recipe],
+        recipe: recipeData[props.recipe_id],
         buttonState: 'light',
         buttonMessage: 'Add To PlayList',
         cartButtonState: 'light',
@@ -60,7 +60,7 @@ export default class Recipe extends Component {
   }
 
   sendCart() {
-    let cart = this.state.ingredientes
+    let cart = this.state.recipe.quantities
     this.props.cartHandler(cart)
     this.props.menuClickHandler(7)
   }

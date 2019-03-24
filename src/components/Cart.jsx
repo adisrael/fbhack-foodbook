@@ -26,6 +26,7 @@ class Cart extends Component {
       fontSize: '1em',
       marginLeft: '10%',
     }
+    console.log(this.props)
     const items = this.props.cart.map(item => <p style={item_style}>{item}</p>)
     return (
         <div>

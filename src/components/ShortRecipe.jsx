@@ -46,8 +46,12 @@ export default function ShortRecipe(props) {
       const recipe_first = {
         display: 'inline-block'
       }
+
       return (
-        <Container onClick={()=>{props.menuClickHandler(4)}}>
+        <Container onClick={()=>{
+          props.recipeHandler(props.recipe.id)
+          props.menuClickHandler(4)
+        }}>
           <Row>
             <Col xs={4}>
               <img src={props.recipe.image} alt="image" style={image_style}/>

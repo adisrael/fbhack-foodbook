@@ -76,7 +76,7 @@ export default class Playlist extends Component {
         <p style={list_text}>by {recipeList.owner}</p>
         <p style={list_text}>{recipeList.description}</p>
         <br></br>
-        <RecipeList recipeList={recipeList} menuClickHandler={this.props.menuClickHandler}/>
+        <RecipeList recipeHandler={this.props.recipeHandler} recipeList={recipeList} menuClickHandler={this.props.menuClickHandler}/>
       </div>
     );
   }
@@ -88,7 +88,7 @@ export class RecipeList extends Component {
     // this.handleChange = this.handleChange.bind(this)
   }
   render() {
-    const recipes = this.props.recipeList.recipes.map(recipe => <ShortRecipe key={recipe} recipe={recipesData[recipe]} menuClickHandler={this.props.menuClickHandler}/>)
+    const recipes = this.props.recipeList.recipes.map(recipe => <ShortRecipe recipeHandler={this.props.recipeHandler} key={recipe} recipe={recipesData[recipe]} menuClickHandler={this.props.menuClickHandler}/>)
 
     return (
       <div>
