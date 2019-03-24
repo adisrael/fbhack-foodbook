@@ -13,7 +13,7 @@ class Profile extends Component {
         }
     }
   render() {
-    let user_id = 1
+    let user_id = 0
     const user = this.state.users[user_id]
 
     return (
@@ -91,10 +91,10 @@ function User(props) {
         </Col>
       </Row>
       <div className="playlist">
-      <MasterList Id={1} menuClickHandler={props.menuClickHandler} title='Playlists' description='My Playlists' sheet='https://sheetsu.com/apis/v1.0bu/efaa0f4293ab'/>
+      <MasterList Id={1} menuClickHandler={props.menuClickHandler} title='Playlists' description='My Playlists' sheet='https://sheetsu.com/apis/v1.0bu/b467796a6b86'/>
       </div>
       <div className="recipes">
-      <MasterList Id={4} recipeHandler={props.recipeHandler}  menuClickHandler={props.menuClickHandler} title='Recipes' description='My Recipes' sheet='https://sheetsu.com/apis/v1.0bu/c4d28fdf6495'/>
+      <MasterList Id={4} recipeHandler={props.recipeHandler}  menuClickHandler={props.menuClickHandler} title='Recipes' description='My Recipes' sheet='https://sheetsu.com/apis/v1.0bu/86ca25c40464'/>
       </div>
 
     </Container>
