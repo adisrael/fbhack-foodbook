@@ -29,9 +29,9 @@ export default class Menu extends Component {
                       id={`popover-positioned-${placement}`}
                       title={'Add'}
                     >
-                    <Nav.Link href="#addRecipe" style={link_styleTwo} onClick={() => {this.props.clickHandler(6)}}>Create recipe</Nav.Link>
+                    <Nav.Link href="#addRecipe" style={link_styleTwo} onClick={() => {this.props.clickHandler(8)}}>Create recipe</Nav.Link>
                     <hr/>
-                    <Nav.Link href="#addList" style={link_styleTwo} onClick={() => {this.props.clickHandler(7)}}>Create list</Nav.Link>
+                    <Nav.Link href="#addList" style={link_styleTwo} onClick={() => {this.props.clickHandler(9)}}>Create list</Nav.Link>
                     </Popover>
                   }
                 >
