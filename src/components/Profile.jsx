@@ -95,7 +95,7 @@ function User(props) {
         <p>{props.user.tags}</p>
       </Row>
       <div className="playlist">
-      <MasterList menuClickHandler={props.menuClickHandler} title='Playlist' description='Des' sheet='https://sheetsu.com/apis/v1.0su/a2c91bdcd0ff'/>
+      <MasterList menuClickHandler={props.menuClickHandler} title='Playlist' description='Des' sheet='https://sheetsu.com/apis/v1.0bu/a019e9cd9790'/>
       </div>
       <div className="recipes">
       <MasterList  menuClickHandler={props.menuClickHandler} title='Recipes' description='Des' sheet='https://sheetsu.com/apis/v1.0bu/10d3cccdda38'/>
