@@ -4,13 +4,14 @@ import Profile from './components/Profile.jsx'
 import Search from './components/Search.jsx'
 import Playlist from './components/Playlist.jsx'
 import Recipe from './components/Recipe.jsx'
+import Menu from './components/Menu.jsx'
 
 
 class Logic extends Component {
 
   render() {
 
-    let state = 3
+    let state = 2
 
     let element
     if (state == 0){
@@ -30,7 +31,8 @@ class Logic extends Component {
     }
     return (
         <div>
-        {element}
+            <Menu/>
+            {element}
         </div>
     );
   }
