@@ -25,6 +25,7 @@ export default class Suggestion extends Component {
         this.clickHandler = this.clickHandler.bind(this)
         this.backHandler = this.backHandler.bind(this)
         this.deleteHandler = this.deleteHandler.bind(this)
+        this.sendIngredients = this.sendIngredients.bind(this)
 
     }
     clickHandler(category){
@@ -50,6 +51,19 @@ export default class Suggestion extends Component {
             selected[category] = false
             return {selected}
         })
+    }
+
+    sendIngredients(){
+        let ingredients = []
+        for (const key in this.state.selected) {
+            if (this.state.selected.hasOwnProperty(key)) {
+                if (this.state.selected[key]){
+                    ingredients.push(key)
+                }
+            }
+        }
+        this.props.ingredientsHandler(ingredients)
+        this.props.menuClickHandler(6)
     }
 
     render() {
@@ -90,7 +104,7 @@ export default class Suggestion extends Component {
                 search={false}
             >
             </SquareGrid>
-            <Button style={{width:'100%', marginTop:'50px'}} variant='success'>GO!</Button>
+            <Button style={{width:'100%', marginTop:'50px'}} variant='success' onClick={this.sendIngredients}>GO!</Button>
             </Container>
         </div>
         )
