@@ -6,6 +6,7 @@ import Playlist from './components/Playlist.jsx'
 import Recipe from './components/Recipe.jsx'
 import Menu from './components/Menu.jsx'
 import Suggestion from './components/Suggestion.jsx';
+import Cart from './components/Cart.jsx'
 
 
 class Logic extends Component {
@@ -39,6 +40,9 @@ class Logic extends Component {
     }
     else if (this.state.index === 5){
         element = <Suggestion/>
+    }
+    else if (this.state.index === 6){
+        element = <Cart/>
     }
     return (
         <div>
