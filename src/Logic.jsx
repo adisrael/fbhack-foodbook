@@ -5,7 +5,9 @@ import Search from './components/Search.jsx'
 import Playlist from './components/Playlist.jsx'
 import Recipe from './components/Recipe.jsx'
 import Menu from './components/Menu.jsx'
-import Suggestion from './components/Suggestion.jsx';
+import Suggestion from './components/Suggestion.jsx'
+import AddRecipe from './components/AddRecipe.jsx'
+import AddList from './components/AddList.jsx'
 
 
 class Logic extends Component {
@@ -39,6 +41,12 @@ class Logic extends Component {
     }
     else if (this.state.index === 5){
         element = <Suggestion/>
+    }
+    else if (this.state.index === 6){
+        element = <AddRecipe menuClickHandler={this.menuClickHandler}/>
+    }
+    else if (this.state.index === 7){
+        element = <AddList menuClickHandler={this.menuClickHandler}/>
     }
     return (
         <div>

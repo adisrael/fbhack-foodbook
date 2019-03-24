@@ -37,6 +37,7 @@ const spinnerStyle = {
     marginRight:'auto'
   }
 
+
 class MasterList extends Component {
     constructor(props) {
         super(props)
@@ -61,7 +62,7 @@ class MasterList extends Component {
         } else {
             content = this.state.listas.map(elements =>{
                 return (
-                <ListCard menuClickHandler={this.props.menuClickHandler} key={uid()} title={elements.Nombre} image={elements.Imagen}/>
+                <ListCard menuClickHandler={this.props.menuClickHandler} key={uid()} title={elements.Nombre} image={elements.Imagen} starts={elements.Stars}/>
                 )
             })
         }
@@ -80,6 +81,11 @@ class MasterList extends Component {
 }
 
 class ListCard extends Component {
+    constructor(props) {
+        super(props)
+      }
+
+
     render(){
         return (
             <div className='ListCards'  style= {cardContent} onClick={()=>{this.props.menuClickHandler(3)}}>
