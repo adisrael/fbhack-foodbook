@@ -25,7 +25,6 @@ class Logic extends Component {
         this.setState({ingredients})
     }
     recipeHandler(recipe){
-        console.log(recipe)
         this.setState({recipe})
     }
 

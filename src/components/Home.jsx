@@ -36,7 +36,7 @@ class Home extends Component {
     } else {
       content = this.state.listas.map(elements =>{
         return (
-          <MasterList recipeHandler={this.props.recipeHandler} menuClickHandler={this.props.menuClickHandler} key={elements.Id} title={elements.Nombre} description={elements.Descripcion} sheet={elements.Sheet}/>
+          <MasterList Id={elements.Id} recipeHandler={this.props.recipeHandler} menuClickHandler={this.props.menuClickHandler} key={elements.Id} title={elements.Nombre} description={elements.Descripcion} sheet={elements.Sheet}/>
         )
       })
     }
