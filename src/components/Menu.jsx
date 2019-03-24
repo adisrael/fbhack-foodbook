@@ -5,6 +5,7 @@ import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
 import Popover from 'react-bootstrap/Popover'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Button from 'react-bootstrap/Button'
+import { MDBIcon } from "mdbreact";
 
 export default class Menu extends Component {
   render() {
@@ -14,10 +15,10 @@ export default class Menu extends Component {
     return (
       <div>
         <Navbar style={{backgroundColor: 'black'}} fixed="bottom">
-            <Nav.Link href="#home" style={link_style} onClick={() => {this.props.clickHandler(0)}}>Home</Nav.Link>
-            <Nav.Link href="#profile" style={link_style} onClick={() => {this.props.clickHandler(1)}}>Profile</Nav.Link>
-            <Nav.Link href="#search" style={link_style} onClick={() => {this.props.clickHandler(2)}}>Search</Nav.Link>
-            <Nav.Link href="#cart" style={link_style} onClick={() => {this.props.clickHandler(7)}}>MyCart</Nav.Link>
+    <Nav.Link href="#home" style={link_style} onClick={() => {this.props.clickHandler(0)}}>{<MDBIcon icon="utensils" />}</Nav.Link>
+            <Nav.Link href="#profile" style={link_style} onClick={() => {this.props.clickHandler(1)}}><MDBIcon icon="user-alt" /></Nav.Link>
+            <Nav.Link href="#search" style={link_style} onClick={() => {this.props.clickHandler(2)}}><MDBIcon icon="search"/></Nav.Link>
+            <Nav.Link href="#cart" style={link_style} onClick={() => {this.props.clickHandler(7)}}><MDBIcon icon="shopping-cart" /></Nav.Link>
             <Nav.Link href="#create" style={link_style}>
             <ButtonToolbar>
               {['top'].map(placement => (
@@ -36,7 +37,7 @@ export default class Menu extends Component {
                     </Popover>
                   }
                 >
-                  <Button variant="success">+</Button>
+                  <Button variant="success"><MDBIcon icon="plus" /></Button>
                 </OverlayTrigger>
               ))}
             </ButtonToolbar>

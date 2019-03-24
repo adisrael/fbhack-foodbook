@@ -52,11 +52,11 @@ export default class Playlist extends Component {
       paddingRight: '5%',
     }
     const button_style = {
-      marginTop: '2%',
+      marginTop: '5%',
       textAlign: 'center',
     }
     const button_size = {
-      width: '100%'
+      width: '100%',
     }
 
     const tags = recipeList.tags.map(tag => <p style={tag_style}>{tag}</p>)
@@ -67,11 +67,10 @@ export default class Playlist extends Component {
         <h1 style={title_style}>{recipeList.name}</h1>
         <img src={recipeList.image} alt="image" style={image_style}/>
         <Row>
-          <Col xs={4}></Col>
-          <Col xs={4} style={button_style}>
+          <Col xs={3}></Col>
+          <Col xs={6} style={button_style}>
             <Button style={button_size} variant={this.state.follow? "outline-secondary": "outline-success"} onClick={this.handleFollow}>{this.state.follow? 'Unfollow': 'Follow'}</Button>
           </Col>
-          <Col xs={4}></Col>
         </Row>
         <p style={list_text}>by {recipeList.owner}</p>
         <p style={list_text}>{recipeList.description}</p>

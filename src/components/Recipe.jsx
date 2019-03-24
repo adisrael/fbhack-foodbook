@@ -28,6 +28,7 @@ const pStyle = {
 
 const divSytle = {
   marginLeft: '10%',
+  height: '150px'
 }
 
 const buttonStyle = {
