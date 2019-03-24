@@ -72,33 +72,33 @@ const recpiesData = [
     },
     {   id: 8,
         name: 'Salted pork ramen',
-        image: '',
+        image: 'https://www.flavorfuljourneys.com/wp-content/uploads/2013/10/Santouka-Salt-Miso-Ramen.jpg',
         ingredients: ['Rice','Fish'],
-        description: ''
+        description: 'A simple bowl of unctuous roasted pork belly ramen with noodles in a deeply flavorful broth is the perfect warming, comfort food',
     },
     {   id: 9,
         name: 'Tuna makizushi ',
-        image: '',
+        image: 'https://i.pinimg.com/originals/d9/b0/a0/d9b0a0996050d637d926d108526c7ea1.jpg',
         ingredients: ['Rice','Fish'],
-        description: ''
+        description: 'A classic Japanese spicy tuna maki sushi recipe'
     },
     {   id: 10,
         name: 'Yakizakana (Grilled fish)',
-        image: '',
+        image: 'https://i.pinimg.com/originals/af/36/a0/af36a004a2929eeea7a198dee3a59148.jpg',
         ingredients: ['Rice','Fish'],
-        description: ''
+        description: 'Yakizakana is a catch-all term for Japanese style grilled fish thats often served whole'
     },
     {   id: 11,
         name: 'Chahan (Fried Rice)',
-        image: '',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Asa_chahan_by_ayustety_in_Naha%2C_Okinawa.jpg/280px-Asa_chahan_by_ayustety_in_Naha%2C_Okinawa.jpg',
         ingredients: ['Rice','Fish'],
-        description: ''
+        description: ' Japanese fried rice dish prepared with rice as a primary ingredient and a myriad of additional ingredients and seasonings'
     },
     {   id: 12,
         name: 'Onigiri (Rice Balls)',
-        image: '',
+        image: 'https://www.manusmenu.com/wp-content/uploads/2017/08/Onigiri-3-1-of-1.jpg',
         ingredients: ['Rice','Fish'],
-        description: ''
+        description: ' Japanese food made from white rice formed into triangular or cylindrical shapes and often wrapped in nori '
     }
 ]
 
