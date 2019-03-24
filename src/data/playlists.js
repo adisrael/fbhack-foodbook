@@ -25,7 +25,7 @@ const playlistData = [
             time: '1h15min'},
           {id: 3,
             name: 'Cazuela',
-            image: 'https://images-gmi-pmc.edge-generalmills.com/5722b9dc-deaa-497b-8581-a79af9cf1002.jpg',
+            image: 'https://www.gourmet.cl/wp-content/uploads/2016/09/cazuela-de-pollo_.jpg',
             description: 'Traditional soup made with a dam of beef, chicken or other protein, plus varied vegetables: squash, corn, potatoes. Sometimes rice, chuchoca or other vegetables are added.',
             time: '50min'},
           {id: 4,
