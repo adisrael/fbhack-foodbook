@@ -19,7 +19,7 @@ export default class Menu extends Component {
             <Nav.Link href="#home" style={link_style} onClick={() => {this.props.clickHandler(0)}}>Home</Nav.Link>
             <Nav.Link href="#profile" style={link_style} onClick={() => {this.props.clickHandler(1)}}>Profile</Nav.Link>
             <Nav.Link href="#search" style={link_style} onClick={() => {this.props.clickHandler(2)}}>Search</Nav.Link>
-            <Nav.Link href="#cart" style={link_style} onClick={() => {this.props.clickHandler(6)}}>MyCart</Nav.Link>
+            <Nav.Link href="#cart" style={link_style} onClick={() => {this.props.clickHandler(7)}}>MyCart</Nav.Link>
         </Navbar>
       </div>
     )

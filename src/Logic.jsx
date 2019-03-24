@@ -12,12 +12,17 @@ import Cart from './components/Cart.jsx'
 class Logic extends Component {
     constructor(props){
         super(props)
-        this.state = {index: 3}
+        this.state = {index: 3, cart: []}
         this.menuClickHandler = this.menuClickHandler.bind(this)
+        this.cartHandler = this.cartHandler.bind(this)
     }
 
     menuClickHandler(index){
         this.setState({index})
+    }
+
+    cartHandler(cart){
+      this.setState({cart})
     }
 
   render() {
@@ -36,13 +41,13 @@ class Logic extends Component {
         element = <Playlist menuClickHandler={this.menuClickHandler}/>
     }
     else if (this.state.index === 4){
-        element = <Recipe/>
+        element = <Recipe menuClickHandler={this.menuClickHandler} cartHandler={this.cartHandler}/>
     }
     else if (this.state.index === 5){
         element = <Suggestion/>
     }
-    else if (this.state.index === 6){
-        element = <Cart/>
+    else if (this.state.index === 7){
+        element = <Cart cart={this.state.cart}/>
     }
     return (
         <div>
