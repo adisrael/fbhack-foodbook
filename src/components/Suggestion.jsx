@@ -87,6 +87,7 @@ export default class Suggestion extends Component {
                 backHandler={this.backHandler}
                 selectHandler={this.selectHandler}
                 deleteHandler={this.deleteHandler}
+                search={false}
             >
             </SquareGrid>
             <Button style={{width:'100%', marginTop:'50px'}} variant='success'>GO!</Button>

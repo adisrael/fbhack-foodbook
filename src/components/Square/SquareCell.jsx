@@ -18,7 +18,7 @@ export default class SquareCell extends Component {
 
     }
     return (
-      <div style={cell_style} onClick={()=> this.props.clickHandler(this.props.title)} >
+      <div style={cell_style} onClick={()=> this.props.search||this.props.clickHandler(this.props.title)} >
         <p>{this.props.title}</p>
       </div>
     )
