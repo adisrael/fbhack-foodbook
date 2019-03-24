@@ -13,7 +13,7 @@ class Profile extends Component {
         }
     }
   render() {
-    let user_id = 0
+    let user_id = 1
     const user = this.state.users[user_id]
 
     return (
