@@ -3,7 +3,7 @@ import Ratings from 'react-ratings-declarative';
 import recipeData from '../data/recipes.js'
 import ItemList from './Lists/ItemList';
 import Button from 'react-bootstrap/Button';
-
+import ReactPlayer from 'react-player'
 
 const titleStyle = {
   textAlign: 'center'
@@ -76,6 +76,8 @@ export default class Recipe extends Component {
         <ItemList parrafo={this.state.recipe.quantities} title='Ingredients'/>
         <hr/>
         <ItemList parrafo={this.state.recipe.preparation} title='Preparation'/>
+        <hr/>
+        <ItemList parrafo={[<ReactPlayer url='https://www.youtube.com/watch?v=oFyYs9gs9uw' playing width='100%' playsinline='true'/>]} title='Video'/>
         <hr/>
         <Button style={buttonStyle} variant={this.state.buttonState} onClick={()=>{this.buttonAddRecipe('success','Done!')}}>{this.state.buttonMessage}</Button>
         <hr/>
