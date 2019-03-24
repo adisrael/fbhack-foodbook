@@ -43,7 +43,6 @@ class Home extends Component {
     return (
         <div>
           <h1 style = {titleStyle}>Home</h1>
-          <p>{this.state.listas.Nombre}</p>
           {content}
         </div>
     );

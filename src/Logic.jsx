@@ -6,16 +6,20 @@ import Playlist from './components/Playlist.jsx'
 import Recipe from './components/Recipe.jsx'
 import Menu from './components/Menu.jsx'
 import Suggestion from './components/Suggestion.jsx';
+import Cart from './components/Cart.jsx'
+import AddRecipe from './components/AddRecipe.jsx'
+import AddList from './components/AddList.jsx'
 import Results from './components/Results.jsx';
-
 
 class Logic extends Component {
     constructor(props){
         super(props)
-        this.state = {index: 3, ingredients: [], recipe:null}
+        this.state = {index: 3, ingredients: [], cart: [], recipe:null}
         this.menuClickHandler = this.menuClickHandler.bind(this)
         this.ingredientsHandler = this.ingredientsHandler.bind(this)
+        this.cartHandler = this.cartHandler.bind(this)
         this.recipeHandler = this.recipeHandler.bind(this)
+
     }
 
     menuClickHandler(index){
@@ -26,6 +30,10 @@ class Logic extends Component {
     }
     recipeHandler(recipe){
         this.setState({recipe})
+    }
+
+    cartHandler(cart){
+      this.setState({cart})
     }
 
   render() {
@@ -44,13 +52,24 @@ class Logic extends Component {
         element = <Playlist menuClickHandler={this.menuClickHandler}/>
     }
     else if (this.state.index === 4){
-        element = <Recipe recipe={this.state.recipe} />
+
+        element = <Recipe recipe={this.state.recipe} menuClickHandler={this.menuClickHandler} cartHandler={this.cartHandler}/>
+
     }
     else if (this.state.index === 5){
         element = <Suggestion menuClickHandler={this.menuClickHandler} ingredientsHandler={this.ingredientsHandler}/>
     }
     else if (this.state.index === 6){
         element = <Results ingredients={this.state.ingredients} menuClickHandler={this.menuClickHandler}/>
+    }
+    else if (this.state.index === 8){
+        element = <AddRecipe menuClickHandler={this.menuClickHandler}/>
+    }
+    else if (this.state.index === 9){
+        element = <AddList menuClickHandler={this.menuClickHandler}/>
+    }
+    else if (this.state.index === 7){
+        element = <Cart cart={this.state.cart}/>
     }
     return (
         <div>

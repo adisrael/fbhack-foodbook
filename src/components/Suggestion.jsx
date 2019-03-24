@@ -11,7 +11,7 @@ export default class Suggestion extends Component {
     constructor(props){
         super(props)
         this.state = {
-            current: ['Fruits','Vegetables','Meats','Diary'],
+            current: ['Fruits','Vegetables','Meats','Dairy'],
             default:true,
             selected: {}
         }
@@ -89,12 +89,12 @@ export default class Suggestion extends Component {
         return (
         <div style={{marginBottom:'65px'}}>
             <Container>
-            
+
             <h1 style={{textAlign:'center'}}>New Ideas</h1>
             <Row>
-              {selected.length ? element : null}  
+              {selected.length ? element : null}
             </Row>
-            <SquareGrid 
+            <SquareGrid
                 default={this.state.default}
                 cells={this.state.current}
                 clickHandler={this.clickHandler}

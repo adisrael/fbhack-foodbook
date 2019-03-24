@@ -7,6 +7,7 @@ const playlistData = [
         tags: ['chilean'],
         description: "This is a selection of my favorites childhood recipes from my hometown: CHILE.",
         recipes: [3,4,5,6,7],
+
         followers: 160,
     },
     {

@@ -28,6 +28,7 @@ const pStyle = {
 
 const divSytle = {
   marginLeft: '10%',
+  height: '150px'
 }
 
 const buttonStyle = {
@@ -43,12 +44,25 @@ export default class Recipe extends Component {
     this.state = {
         recipe: recipeData[props.recipe],
         buttonState: 'light',
-        buttonMessage: 'Add To PlayList'
+        buttonMessage: 'Add To PlayList',
+        cartButtonState: 'light',
+        cartButtonMessage: 'Get Ingredients'
     }
+    this.sendCart = this.sendCart.bind(this)
   }
 
   buttonAddRecipe(buttonState, buttonMessage){
     this.setState({buttonState,buttonMessage})
+  }
+
+  buttonGetIngredients(cartButtonMessage){
+    this.setState({cartButtonMessage})
+  }
+
+  sendCart() {
+    let cart = this.state.ingredientes
+    this.props.cartHandler(cart)
+    this.props.menuClickHandler(7)
   }
 
   render() {
@@ -64,6 +78,8 @@ export default class Recipe extends Component {
         <ItemList parrafo={this.state.recipe.preparation} title='Preparation'/>
         <hr/>
         <Button style={buttonStyle} variant={this.state.buttonState} onClick={()=>{this.buttonAddRecipe('success','Done!')}}>{this.state.buttonMessage}</Button>
+        <hr/>
+        <Button style={buttonStyle} variant={this.state.cartButtonState} onClick={this.sendCart}>{this.state.cartButtonMessage}</Button>
         <hr/>
         <Foo/>
       </div>
