@@ -5,12 +5,13 @@ import Search from './components/Search.jsx'
 import Playlist from './components/Playlist.jsx'
 import Recipe from './components/Recipe.jsx'
 import Menu from './components/Menu.jsx'
+import Suggestion from './components/Suggestion.jsx';
 
 
 class Logic extends Component {
     constructor(props){
         super(props)
-        this.state = {index: 2}
+        this.state = {index: 5}
         this.menuClickHandler = this.menuClickHandler.bind(this)
     }
 
@@ -34,8 +35,11 @@ class Logic extends Component {
     else if (this.state.index === 3){
         element = <Playlist/>
     }
-    else if (this.state.index == 4){
+    else if (this.state.index === 4){
         element = <Recipe/>
+    }
+    else if (this.state.index === 5){
+        element = <Suggestion/>
     }
     return (
         <div>
