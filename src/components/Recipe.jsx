@@ -57,9 +57,9 @@ export default class Recipe extends Component {
     let recipe_id = 0
     return (
       <div>
-        <h1 style={titleStyle}>{this.state.recipe[recipe_id].Nombre}</h1>
-        <img src={this.state.recipe[recipe_id].Imagen} style={imageStyle}/>
-        <p style={pStyle}>{this.state.recipe[recipe_id].Descripcion}</p>
+        <h1 style={titleStyle}>{this.state.recipe[recipe_id].name}</h1>
+        <img src={this.state.recipe[recipe_id].image} style={imageStyle}/>
+        <p style={pStyle}>{this.state.recipe[recipe_id].descriptions}</p>
         <hr/>
         <ItemList parrafo={this.state.ingredientes} title='Ingredients'/>
         <hr/>
