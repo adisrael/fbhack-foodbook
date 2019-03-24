@@ -23,6 +23,12 @@ export default class Playlist extends Component {
     let playlist_id = 0
     const recipeList = this.state.playlists[playlist_id]
 
+    const tag_style = {
+      textAlign: 'center',
+      fontWeight: 'normal',
+      color: '#AAA',
+      marginLeft: '5%',
+    }
     const title_style = {
       textAlign: 'center',
       fontSize: '1.5em',
@@ -52,6 +58,8 @@ export default class Playlist extends Component {
       width: '100%'
     }
 
+    const tags = recipeList.tags.map(tag => <p style={tag_style}>{tag}</p>)
+
     return (
       <div>
         <br></br>
@@ -66,6 +74,9 @@ export default class Playlist extends Component {
         </Row>
         <p style={list_text}>by {recipeList.owner}</p>
         <p style={list_text}>{recipeList.description}</p>
+        <Row>
+          {tags}
+        </Row>
         <br></br>
         <RecipeList recipeList={recipeList}/>
       </div>
