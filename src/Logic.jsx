@@ -43,7 +43,7 @@ class Logic extends Component {
         element = <Home menuClickHandler={this.menuClickHandler} recipeHandler={this.recipeHandler}/>
     }
     else if (this.state.index === 1){
-        element = <Profile menuClickHandler={this.menuClickHandler}/>
+        element = <Profile recipeHandler={this.recipeHandler} menuClickHandler={this.menuClickHandler}/>
     }
     else if (this.state.index === 2){
         element = <Search suggestionHandler={this.menuClickHandler}/>

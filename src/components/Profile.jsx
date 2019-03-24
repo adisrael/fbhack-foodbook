@@ -18,7 +18,7 @@ class Profile extends Component {
 
     return (
       <div>
-          <User user={user} menuClickHandler={this.props.menuClickHandler}/>
+          <User recipeHandler={this.props.recipeHandler} user={user} menuClickHandler={this.props.menuClickHandler}/>
       </div>
     );
   }
@@ -91,10 +91,10 @@ function User(props) {
         </Col>
       </Row>
       <div className="playlist">
-      <MasterList menuClickHandler={props.menuClickHandler} title='Playlists' description='My Playlists' sheet='https://sheetsu.com/apis/v1.0bu/efaa0f4293ab'/>
+      <MasterList Id={1} menuClickHandler={props.menuClickHandler} title='Playlists' description='My Playlists' sheet='https://sheetsu.com/apis/v1.0bu/efaa0f4293ab'/>
       </div>
       <div className="recipes">
-      <MasterList  menuClickHandler={props.menuClickHandler} title='Recipes' description='My Recipes' sheet='https://sheetsu.com/apis/v1.0bu/c4d28fdf6495'/>
+      <MasterList Id={4} recipeHandler={props.recipeHandler}  menuClickHandler={props.menuClickHandler} title='Recipes' description='My Recipes' sheet='https://sheetsu.com/apis/v1.0bu/c4d28fdf6495'/>
       </div>
 
     </Container>
