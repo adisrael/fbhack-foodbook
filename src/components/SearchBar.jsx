@@ -29,8 +29,8 @@ export default class SearchBar extends Component {
             <div>
                 <Form>
                     <Form.Row>
-                        <Col xs={9}><Form.Control type="text" onChange={this.changeHandler}/></Col>
-                        <Col xs={1}><Button onClick={this.visibleHandler}>Filter</Button></Col>
+                        <Col xs={9}><Form.Control type="text" style={{marginTop: '1%'}} onChange={this.changeHandler}/></Col>
+                        <Col xs={1}><Button onClick={this.visibleHandler} style={{marginTop: 0}}>Filter</Button></Col>
                     </Form.Row>
 
                     <Form.Row style={{marginTop: "10px"}}>
