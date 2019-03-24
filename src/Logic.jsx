@@ -10,7 +10,7 @@ class Logic extends Component {
 
   render() {
 
-    let state = 3
+    let state = 4
 
     let element
     if (state == 0){
