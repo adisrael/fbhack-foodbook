@@ -44,6 +44,7 @@ class Logic extends Component {
         <div>
             <Menu clickHandler={this.menuClickHandler}/>
             {element}
+            <div style={{marginBottom:'65px'}}></div>
         </div>
     );
   }
