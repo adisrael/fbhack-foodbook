@@ -6,12 +6,11 @@ import Col from 'react-bootstrap/Col';
 import MasterList from './Lists/MasterList';
 
 class Profile extends Component {
-  constructor() {
-        super()
+  constructor(props) {
+        super(props)
         this.state = {
             users: userData
         }
-        // this.handleChange = this.handleChange.bind(this)
     }
   render() {
     let user_id = 0
@@ -19,7 +18,7 @@ class Profile extends Component {
 
     return (
       <div>
-          <User user={user}/>
+          <User user={user} menuClickHandler={this.props.menuClickHandler}/>
       </div>
     );
   }
@@ -96,10 +95,10 @@ function User(props) {
         <p>{props.user.tags}</p>
       </Row>
       <div className="playlist">
-      <MasterList title='Playlist' description='Des' sheet='https://sheetsu.com/apis/v1.0bu/5a04814a4863'/>
+      <MasterList menuClickHandler={props.menuClickHandler} title='Playlist' description='Des' sheet='https://sheetsu.com/apis/v1.0su/a2c91bdcd0ff'/>
       </div>
       <div className="recipes">
-      <MasterList title='Recipes' description='Des' sheet='https://sheetsu.com/apis/v1.0bu/b79697e12801'/>
+      <MasterList  menuClickHandler={props.menuClickHandler} title='Recipes' description='Des' sheet='https://sheetsu.com/apis/v1.0bu/10d3cccdda38'/>
       </div>
   
     </Container>

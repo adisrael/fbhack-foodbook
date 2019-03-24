@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import uid from 'uid';
+import Spinner from 'react-spinner-material';
 
 const MasterListStyle = {
     textAlign: 'Center'
@@ -30,10 +32,15 @@ const imageStyles = {
     borderRadius: '50px'
 }
 
+const spinnerStyle = {
+    marginLeft:'auto',
+    marginRight:'auto'
+  }
+
 class MasterList extends Component {
     constructor(props) {
         super(props)
-          this.state = { listas: [] }
+          this.state = { listas: [], loading: true }
       }
 
       componentWillMount() {
@@ -43,22 +50,28 @@ class MasterList extends Component {
             return response.json()
           })
           .then((listas) => {
-            this.setState({ listas })
+            this.setState({ listas, loading: false })
           })
       }
       
     render(){
+        let content;
+        if (this.state.loading) {
+        content = <div style={spinnerStyle}><Spinner size={60} spinnerColor={"#333"} spinnerWidth={2} visible={true} /></div>
+        } else {
+            content = this.state.listas.map(elements =>{
+                return (
+                <ListCard menuClickHandler={this.props.menuClickHandler} key={uid()} title={elements.Nombre} image={elements.Imagen}/>
+                )
+            })
+        }
         return ( 
             <div className='MasterList' style={MasterListStyle}>
             <h3>{this.props.title}</h3>
             <p>{this.props.description}</p>
             <div style={body}>
                 <section style = {cardStyle}>
-                {this.state.listas.map(elements =>{
-                    return (
-                    <ListCard id={elements.id} title={elements.Nombre} image={elements.Imagen}/>
-                    )
-                })}
+                {content}
                 </section>
             </div>
             </div>
@@ -69,8 +82,8 @@ class MasterList extends Component {
 class ListCard extends Component {
     render(){
         return (
-            <div className='ListCards'  style= {cardContent}>
-                <img src={this.props.image} alt="Logo" style={imageStyles}/>
+            <div className='ListCards'  style= {cardContent} onClick={()=>{this.props.menuClickHandler(3)}}>
+                <img  src={this.props.image} alt="Logo" style={imageStyles}/>
                 <h6>{this.props.title}</h6>
             </div>
         )
