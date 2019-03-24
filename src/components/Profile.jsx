@@ -14,7 +14,7 @@ class Profile extends Component {
         // this.handleChange = this.handleChange.bind(this)
     }
   render() {
-    let user_id = 1
+    let user_id = 0
     const user = this.state.users[user_id]
 
     return (
@@ -34,11 +34,8 @@ function User(props) {
     fontSize: '2.5em',
   }
   const image_style = {
-    display: 'block',
     width: '50%',
-    // height: '50%',
-    // width: '50%',
-    // maxWidth: '50%',
+    maxWidth: '50%',
     height: 'auto',
     left: '25%',
     borderRadius: '50%',
@@ -97,13 +94,13 @@ function User(props) {
 
       {/* <Row>
         <p>{props.user.tags}</p>
-      </Row> */}
+      </Row>
       <div className="playlists">
         <MasterList title='Playlists'></MasterList>
       </div>
       <div className="recipes">
         <MasterList title='Recipes'></MasterList>
-      </div>
+      </div> */}
     </Container>
   )
 }
