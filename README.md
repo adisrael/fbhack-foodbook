@@ -1,7 +1,9 @@
 # FoodBook - FaceBook Hackathon Chile 2019
 
 • Roy Fassler
+
 • Yoav Navon
+
 • Alexander Israel
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
